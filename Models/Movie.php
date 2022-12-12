@@ -11,8 +11,16 @@ class Movie
     public $cast;
     public $cinematography;
 
-    function __construct($title, int $year, int $duration, $country, $director, $genre, $cast, $cinematography = "")
-    {
+    function __construct(
+        String $title,
+        Int $year,
+        Int $duration,
+        String $country,
+        String $director,
+        String $genre,
+        String $cast,
+        String $cinematography = ""
+    ) {
         $this->title = $title;
         $this->year = $year;
         $this->duration = $duration;
@@ -21,5 +29,10 @@ class Movie
         $this->genre =  $genre;
         $this->cast = $cast;
         $this->cinematography = $cinematography;
+    }
+
+    public function printMovie()
+    {
+        return "Title: $this->title; Directed by: $this->director; Year: $this->year";
     }
 };

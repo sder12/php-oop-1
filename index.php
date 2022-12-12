@@ -24,5 +24,6 @@ $movie = new Movie(
 );
 
 
-
 var_dump($movie);
+
+echo $movie->printMovie();
