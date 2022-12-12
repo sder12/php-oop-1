@@ -13,7 +13,7 @@ require_once __DIR__ . "/Models/Movie.php";
 // $movie->genre = "Horror"; //Horror + Thriller
 // $movie->cast = "Jack Nicholson"; //Shelley Duvall - Danny Lloyd - Philip Stone
 
-$movie = new Movie(
+$shining = new Movie(
     "The Shining",
     1980,
     144,
@@ -23,7 +23,19 @@ $movie = new Movie(
     "Jack Nicholson"
 );
 
+$seven = new Movie(
+    "Se7en",
+    1995,
+    127,
+    "USA",
+    "David Fincher",
+    "Crime", //    Thriller Crime Mystery
+    "Morgan Freeman", // Brad Pitt - Gwyneth Paltrow
+    "Darius Khondji"
+);
 
-var_dump($movie);
+var_dump($shining);
+var_dump($seven);
 
-echo $movie->printMovie();
+echo $shining->printMovie();
+echo $seven->printMovie();
