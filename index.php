@@ -34,8 +34,81 @@ $seven = new Movie(
     "Darius Khondji"
 );
 
-var_dump($shining);
-var_dump($seven);
+// var_dump($shining);
+// var_dump($seven);
 
-echo $shining->printMovie();
-echo $seven->printMovie();
+// echo $shining->printMovie();
+// echo $seven->printMovie();
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MOVIES</title>
+</head>
+
+<body>
+    <section>
+        <h1>Movies OOP</h1>
+    </section>
+    <section>
+        <h2><?php echo $shining->title; ?></h2>
+        <ul>
+            <li>
+                Directed by: <?php echo $shining->director; ?>
+            </li>
+            <li>
+                Year production: <?php echo $shining->year; ?>
+            </li>
+            <li>
+                Country origin: <?php echo $shining->country; ?>
+            </li>
+            <li>
+                Duration movie: <?php echo $shining->duration; ?> mins
+            </li>
+            <li>
+                Genre: <?php echo $shining->genre ?>
+            </li>
+            <li>
+                Cast: <?php echo $shining->cast ?>
+            </li>
+            <li>
+                Cast: <?php echo $shining->cinematography ?>
+            </li>
+        </ul>
+    </section>
+    <section>
+        <h2><?php echo $seven->title; ?></h2>
+        <ul>
+            <li>
+                Directed by: <?php echo $seven->director; ?>
+            </li>
+            <li>
+                Year production: <?php echo $seven->year; ?>
+            </li>
+            <li>
+                Country origin: <?php echo $seven->country; ?>
+            </li>
+            <li>
+                Duration movie: <?php echo $seven->duration; ?> mins
+            </li>
+            <li>
+                Genre: <?php echo $seven->genre ?>
+            </li>
+            <li>
+                Cast: <?php echo $seven->cast ?>
+            </li>
+            <li>
+                Cast: <?php echo $seven->cinematography ?>
+            </li>
+        </ul>
+    </section>
+
+</body>
+
+</html>
