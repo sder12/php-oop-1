@@ -19,8 +19,9 @@ $shining = new Movie(
     144,
     "USA",
     "Stanley Kubrick",
-    "Horror",
-    "Jack Nicholson"
+    ["Horror"],
+    ["Jack Nicholson,", "Shelley Duvall,", "Danny Lloyd"],
+    "-"
 );
 
 $seven = new Movie(
@@ -29,8 +30,8 @@ $seven = new Movie(
     127,
     "USA",
     "David Fincher",
-    "Crime", //    Thriller Crime Mystery
-    "Morgan Freeman", // Brad Pitt - Gwyneth Paltrow
+    ["Crime,", "Thriller,", "Mystery"], //    Thriller Crime Mystery
+    ["Morgan Freeman,", "Brad Pitt"], // Brad Pitt - Gwyneth Paltrow
     "Darius Khondji"
 );
 
@@ -39,6 +40,7 @@ $seven = new Movie(
 
 // echo $shining->printMovie();
 // echo $seven->printMovie();
+$movies = [$shining, $seven];
 ?>
 
 
@@ -56,58 +58,42 @@ $seven = new Movie(
     <section>
         <h1>Movies OOP</h1>
     </section>
-    <section>
-        <h2><?php echo $shining->title; ?></h2>
-        <ul>
-            <li>
-                Directed by: <?php echo $shining->director; ?>
-            </li>
-            <li>
-                Year production: <?php echo $shining->year; ?>
-            </li>
-            <li>
-                Country origin: <?php echo $shining->country; ?>
-            </li>
-            <li>
-                Duration movie: <?php echo $shining->duration; ?> mins
-            </li>
-            <li>
-                Genre: <?php echo $shining->genre ?>
-            </li>
-            <li>
-                Cast: <?php echo $shining->cast ?>
-            </li>
-            <li>
-                Cast: <?php echo $shining->cinematography ?>
-            </li>
-        </ul>
-    </section>
-    <section>
-        <h2><?php echo $seven->title; ?></h2>
-        <ul>
-            <li>
-                Directed by: <?php echo $seven->director; ?>
-            </li>
-            <li>
-                Year production: <?php echo $seven->year; ?>
-            </li>
-            <li>
-                Country origin: <?php echo $seven->country; ?>
-            </li>
-            <li>
-                Duration movie: <?php echo $seven->duration; ?> mins
-            </li>
-            <li>
-                Genre: <?php echo $seven->genre ?>
-            </li>
-            <li>
-                Cast: <?php echo $seven->cast ?>
-            </li>
-            <li>
-                Cast: <?php echo $seven->cinematography ?>
-            </li>
-        </ul>
-    </section>
+
+    <?php foreach ($movies as $move) { ?>
+        <section>
+            <h2><?php echo $move->title; ?></h2>
+            <ul>
+                <li>
+                    Directed by: <?php echo $move->director; ?>
+                </li>
+                <li>
+                    Year production: <?php echo  $move->year; ?>
+                </li>
+                <li>
+                    Country origin: <?php echo  $move->country; ?>
+                </li>
+                <li>
+                    Duration movie: <?php echo  $move->duration; ?> mins
+                </li>
+
+                <li>
+                    Genre:
+                    <?php foreach ($move->genre as $genre) { ?>
+                        <?php echo  $genre ?>
+                    <?php } ?>
+                </li>
+                <li>
+                    Cast:
+                    <?php foreach ($move->cast as $actor) { ?>
+                        <?php echo $actor ?>
+                    <?php } ?>
+                </li>
+                <li>
+                    Cinematography: <?php echo  $move->cinematography ?>
+                </li>
+            </ul>
+        </section>
+    <?php } ?>
 
 </body>
 

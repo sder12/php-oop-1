@@ -17,8 +17,8 @@ class Movie
         Int $duration,
         String $country,
         String $director,
-        String $genre,
-        String $cast,
+        array $genre,
+        array $cast,
         String $cinematography = ""
     ) {
         $this->title = $title;
